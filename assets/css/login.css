@@ -30,4 +30,43 @@ body {
 
 .title-box {
     height: 60px;
+    background: url('../images/login_title.png') no-repeat center;
+}
+
+.reg-box {
+    display: none;
+}
+
+.layui-form {
+    padding: 0 30px;
+}
+
+.links {
+    /* 添加一个右对齐的属性 */
+    display: flex;
+    /* 使用css3的弹性布局对齐方式 */
+    justify-content: flex-end;
+}
+
+
+/* 使用子绝父相使其图标对齐 */
+
+.layui-form-item {
+    position: relative;
+}
+
+
+/* 字体图标绝对定位 */
+
+.layui-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+
+/* 由于字体图标会和文本框内容重叠，设置padding */
+
+.layui-input {
+    padding-left: 30px;
 }
