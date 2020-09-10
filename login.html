@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>大事件项目-登录</title>
+    <title>大事件项目</title>
     <!-- layui样式表 -->
     <link rel="stylesheet" href="./assets/lib/layui/css/layui.css">
     <!-- 自己的样式表 -->
@@ -58,8 +58,8 @@
         <!-- 2.注册的div -->
         <div class="reg-box">
             <!-- 注册的表单 -->
+            <!-- 给注册表单添加id是为了添加注册表单事件 -->
             <form class="layui-form" id="form_reg">
-
                 <!-- 用户名 -->
                 <div class="layui-form-item">
                     <!-- 使用layui字体图标 -->
@@ -101,6 +101,9 @@
     <script src="./assets/lib/layui/layui.all.js"></script>
     <!-- 导入 JQuery -->
     <script src="./assets/lib/jquery.js"></script>
+    <!-- 导入自己的baseAPI -->
+    <!-- baseAPI必须写在jquery之后  自己的js脚本请求之前生效 因为要请求的路径url决定 -->
+    <script src="./assets/js/baseAPI.js"></script>
     <!-- 导入自己的js脚本 -->
     <script src="./assets/js/login.js"></script>
 </body>
