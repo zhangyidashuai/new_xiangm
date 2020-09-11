@@ -5,4 +5,12 @@ $.ajaxPrefilter(function(options) {
     //在发起真正的ajax请求之前，拼接统一的请求根路径 
     options.url = 'http://ajax.frontend.itheima.net' + options.url //在这设置统一根路径为了防止以后根路径发生变化要一个个修改 在这设置可以一次修改全局变化
     console.log(options.url)
+
+    //统一为有权限的接口 设置hraders请求头
+    //用if判断请求头是否是带/my/开头 是的话执行下列统一权限代码
+    if (options.url.indexOf('/my/') !== -1) {
+        options.headers = {
+            Authorization: localStorage.getItem('token') || ''
+        }
+    }
 })

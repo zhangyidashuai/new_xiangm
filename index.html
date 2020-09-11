@@ -33,13 +33,15 @@
                     </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href=""><span class="iconfont icon-tuichu"></span>退出</a>
+                    <!-- 添加JavaScript：；就能阻止a链接默认跳转行为 -->
+                    <a href="javascript:;" id="btnLogout"><span class="iconfont icon-tuichu"></span>退出</a>
                 </li>
             </ul>
         </div>
 
         <div class="layui-side layui-bg-black">
             <div class="layui-side-scroll">
+                <!-- 44行代码从25行复制来时候把a链接转换为div盒子 -->
                 <div class="userinfo">
                     <img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
                     <span class="text-avatar">A</span>
@@ -99,7 +101,7 @@
     <script src="./assets/lib/layui/layui.all.js"></script>
     <!-- 导入jquery -->
     <script src="./assets/lib/jquery.js"></script>
-    <!-- 导入自己封装的seabWPI文件 是为了访问url链接成功-->
+    <!-- 导入自己封装的seabWPI文件 是为了访问url链接成功 拼接了总体URL地址-->
     <script src="./assets/js/baseAPI.js"></script>
     <!-- 导入自己的index.js文件 -->
     <script src="./assets/js/index.js"></script>

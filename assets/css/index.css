@@ -49,12 +49,19 @@ a {
     line-height: 60px;
     text-align: center;
     font-size: 12px;
+    /* 禁止里面的内容被用户选中 */
     user-select: none;
 }
+
+
+/* 添加分割线  通过子代选择器*/
 
 .layui-side-scroll .userinfo {
     border-bottom: 1px solid #282b33;
 }
+
+
+/*index.html 26行和45行代码 图片大小和文字大小 */
 
 .layui-nav-img {
     width: 40px;
@@ -62,6 +69,7 @@ a {
 }
 
 .text-avatar {
+    /* 行内元素 */
     display: inline-block;
     width: 40px;
     height: 40px;
