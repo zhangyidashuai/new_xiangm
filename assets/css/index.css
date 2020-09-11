@@ -1,0 +1,77 @@
+/* 底部区域 */
+
+.layui-footer {
+    text-align: center;
+}
+
+
+/* 一级标题导航栏图标 */
+
+.iconfont {
+    margin-right: 8px;
+}
+
+
+/*二级标题导航栏图标  */
+
+.layui-icon {
+    margin-left: 20px;
+    margin-right: 8px;
+}
+
+
+/* 内容主体区域 iframe*/
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 主体内容区域全局展开 */
+
+.layui-body {
+    overflow: hidden;
+}
+
+
+/* 强制清除a链接c3动画 */
+
+a {
+    transition: none !important;
+}
+
+
+/* 导航栏index.html 43行代码 */
+
+.userinfo {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 12px;
+    user-select: none;
+}
+
+.layui-side-scroll .userinfo {
+    border-bottom: 1px solid #282b33;
+}
+
+.layui-nav-img {
+    width: 40px;
+    height: 40px;
+}
+
+.text-avatar {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #009688;
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    position: relative;
+    top: 4px;
+    margin-right: 10px;
+}
