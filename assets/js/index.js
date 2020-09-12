@@ -5,7 +5,7 @@ $(function() {
 
     var layer = layui.layer //12行代码的调用
 
-    //35行代码的退出功能  绑定点击事件
+    //点击按钮实现退出功能    35行代码的退出功能  绑定点击事件
     $('#btnLogout').on('click', function() {
         //console.log('OK');
         //提示用户是确认退出
@@ -45,7 +45,23 @@ function getUserInfo() {
             }
             //调用renderAvater专门渲染用户头像   res data传递
             renderAvatar(res.data)
-        }
+        }, //这里一定要加, 不然下面函数会报错
+
+
+        //判断用户是否登录 如果没登录则强制退出到登录界面  无论成功还是失败 都调用complete回调函数  见basewpi.js
+        //complete: function(res) {
+        //console.log('执行了complete回调函数');
+        //console.log(res);
+        //在complete回调函数中 可以通过res.responseJSON拿到服务器响应回来的数据
+        //if判断条件
+        //if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败!') {
+        //1.强制清空token
+        //localStorage.removeItem('token')
+
+        //2.强制跳转登录页面
+        //location.href = '/login.html'
+
+
     })
 }
 
