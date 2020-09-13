@@ -15,7 +15,8 @@ body {
     justify-content: space-between;
 }
 
-#form-add {
+#form-add,
+#editCateForm {
     padding-top: 20px;
     padding-right: 30px;
 }
