@@ -17,7 +17,6 @@
     <div class="layui-card">
         <div class="layui-card-header">文章列表</div>
         <div class="layui-card-body">
-
             <!-- 筛选区域 -->
             <form class="layui-form" id="form-search">
                 <div class="layui-form-item layui-inline">
@@ -25,16 +24,15 @@
                 </div>
                 <div class="layui-form-item layui-inline">
                     <select name="state">
-                    <option value="">所有状态</option>
-                    <option value="已发布">已发布</option>
-                    <option value="草稿">草稿</option>
-                  </select>
+              <option value="">所有状态</option>
+              <option value="已发布">已发布</option>
+              <option value="草稿">草稿</option>
+            </select>
                 </div>
                 <div class="layui-form-item layui-inline">
                     <button class="layui-btn" lay-submit lay-filter="formDemo">筛选</button>
                 </div>
             </form>
-
             <!-- 列表区域 -->
             <table class="layui-table">
                 <colgroup>
@@ -55,7 +53,6 @@
                 </thead>
                 <tbody></tbody>
             </table>
-
             <!-- 分页区域 -->
             <div id="pageBox"></div>
         </div>
@@ -85,14 +82,12 @@
         {{/each}}
     </script>
 
-
     <!-- 导入 layui 的js -->
-    <script src=" ./assets/lib/layui/layui.all.js "></script>
+    <script src="./assets/lib/layui/layui.all.js "></script>
     <!-- 导入 jQuery -->
     <script src="./assets/lib/jquery.js "></script>
     <!-- 导入 baseAPI -->
     <script src="./assets/js/baseAPI.js "></script>
-
     <!-- 引入模板引擎 -->
     <script src="./assets/lib/template-web.js "></script>
     <!-- 导入自己的 js -->
