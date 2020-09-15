@@ -2,7 +2,7 @@
 $(function() {
     var layer = layui.layer
     var form = layui.form
-    var laypage = layui.laypage
+    var laypage = layui.laypage //从文档中导入 调用94行代码
 
     // 定义美化时间的过滤器
     template.defaults.imports.dataFormat = function(date) {
@@ -76,13 +76,15 @@ $(function() {
     // 为筛选表单绑定 submit 事件
     $('#form-search').on('submit', function(e) {
         e.preventDefault()
-            // 获取表单中选中项的值
+
+        // 获取表单中选中项的值
         var cate_id = $('[name=cate_id]').val()
         var state = $('[name=state]').val()
             // 为查询参数对象 q 中对应的属性赋值
         q.cate_id = cate_id
         q.state = state
-            // 根据最新的筛选条件，重新渲染表格的数据
+
+        // 根据最新的筛选条件，重新渲染表格的数据
         initTable()
     })
 
@@ -90,29 +92,36 @@ $(function() {
     function renderPage(total) {
         // 调用 laypage.render() 方法来渲染分页的结构
         laypage.render({
+            //四个选项的值
             elem: 'pageBox', // 分页容器的 Id
             count: total, // 总数据条数
             limit: q.pagesize, // 每页显示几条数据
             curr: q.pagenum, // 设置默认被选中的分页
-            layout: ['count', 'limit', 'prev', 'page', 'next', 'skip'],
+            layout: ['count', 'limit', 'prev', 'page', 'next', 'skip'], //这些值是调用文档里面
+            //每页条数的选择项。如果 layout 参数开启了 limit，则会出现每页条数的select选择框
             limits: [2, 3, 5, 10],
             // 分页发生切换的时候，触发 jump 回调
             // 触发 jump 回调的方式有两种：
-            // 1. 点击页码的时候，会触发 jump 回调
+            // 1. 初始化点击页码的时候，会触发 jump 回调
             // 2. 只要调用了 laypage.render() 方法，就会触发 jump 回调
             jump: function(obj, first) {
-                // 可以通过 first 的值，来判断是通过哪种方式，触发的 jump 回调
+                //console.log(obj);
+
+                //可以通过 first 的值，来判断是通过哪种方式，触发的 jump 回调
                 // 如果 first 的值为 true，证明是方式2触发的
                 // 否则就是方式1触发的
                 console.log(first)
                 console.log(obj.curr)
-                    // 把最新的页码值，赋值到 q 这个查询参数对象中
+
+                // 把最新的页码值，赋值到 q 这个查询参数对象中
                 q.pagenum = obj.curr
-                    // 把最新的条目数，赋值到 q 这个查询参数对象的 pagesize 属性中
+
+                // 把最新的条目数，赋值到 q 这个查询参数对象的 pagesize 属性中
                 q.pagesize = obj.limit
-                    // 根据最新的 q 获取对应的数据列表，并渲染表格
-                    // initTable()
-                if (!first) {
+
+                // 根据最新的 q 获取对应的数据列表，并渲染表格
+                // initTable()  解决jump被触发的死循环   
+                if (!first) { //if判断不是trun时候
                     initTable()
                 }
             }
